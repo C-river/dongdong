@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+        <title>ECharts</title>
+        <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts/modules/oldie.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+        <style>#container {width:1200px; height: 600px;margin: auto;}</style>
+    </head>
+    <body>        
+
+	<div id="container"></div>
+
+        
+        <script>
+var chart = Highcharts.chart('container', {
+
+	title: {
+		text: '中国各省人口数量'
+	},
+	subtitle: {
+		text: '总人口2010年普查，新生儿2017年'
+	},
+	xAxis: {
+		categories: ['广东', '山 东', '河 南', '四 川', '江 苏', '河 北', '湖 南', '安 徽', '湖 北', '浙 江', '广 西', '云 南', '江 西', '辽 宁', '黑龙江', '陕 西', '福 建', '山 西', '贵 州', '重 庆', '吉 林', '甘 肃', '内蒙古', '上 海', '北 京', '天 津', '新 疆', '海 南', '宁 夏', '青 海', '西 藏']
+	},
+	yAxis: [{
+		lineWidth: 1,
+		title: {
+			text: '总人口 (万)'
+		}
+	},
+	{
+		lineWidth: 1,
+		title: {
+			text: '新生儿 (万)'
+		},
+		opposite: true
+	}
+	]
+	,
+	plotOptions: {
+		line: {
+			dataLabels: {
+				// 开启数据标签
+				enabled: true          
+			},
+			// 关闭鼠标跟踪，对应的提示框、点击事件会失效
+			enableMouseTracking: false
+		}
+	},
+	series: [{
+		name: '总人口',
+		data: [10432, 9579, 9403, 8042, 7866, 7185, 6570, 5950, 5724, 5443, 4602, 4597, 4457, 4375, 3831, 3733, 3689, 3571, 3475, 2885, 2745, 2558, 2471, 2302, 1961, 1294, 1127, 867, 630, 563, 300],
+		yAxis: 0
+	},
+{
+		name: '新生儿',
+		data: [151, 174, 140, 93, 77, 13, 90, 88, 74, 67, 81, 64, 63, 28, 23, 42, 58, 40, 50, 34, 18, 32, 23, 19, 19, 11, 0, 13, 0, 8, 5],
+		yAxis: 1,
+		color: 'red'
+	}
+	]
+});
+        </script>
+        
+    </body>
+</html>
